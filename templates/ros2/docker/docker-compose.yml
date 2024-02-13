@@ -1,0 +1,24 @@
+version: "3.9"
+services:
+  ros2_docker:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+      target: vsc
+      args:
+        - AMENT_WORKSPACE_DIR=${AMENT_WORKSPACE_DIR}
+        - USERNAME=${USERNAME:-developer}
+        - UID=${UID:-1000}
+        - GID=${UID:-1000}
+    container_name: ros2_docker
+    environment:
+      - ROS_DOMAIN_ID=${ROS_DOMAIN_ID}
+      - YOUR_IP=${YOUR_IP}
+      - ROBOT_IP=${ROBOT_IP}
+    extra_hosts:
+      - "${ROBOT_HOSTNAME}:${ROBOT_IP}"
+    image: ros2_template:devel
+    network_mode: "host"
+    tty: true
+    volumes:
+      - ../src:${AMENT_WORKSPACE_DIR}/src
