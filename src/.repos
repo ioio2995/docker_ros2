@@ -1,0 +1,5 @@
+repositories:
+  examples:
+    type: git
+    url: https://github.com/ioio2995/myactuator_ros2_control.git
+    version: master

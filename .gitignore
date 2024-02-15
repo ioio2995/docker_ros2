@@ -1,0 +1,6 @@
+**/build
+/dump*
+/old
+.old
+src/*
+!src/.repos
