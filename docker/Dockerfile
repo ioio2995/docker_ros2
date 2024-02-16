@@ -48,6 +48,7 @@ RUN apt-get update \
     iputils-ping \
     net-tools \
     python3-vcstool \
+    wget \
  && rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update \

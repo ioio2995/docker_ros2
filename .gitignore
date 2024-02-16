@@ -4,3 +4,4 @@
 .old
 src/*
 !src/.repos
+!src/.readme.txt
