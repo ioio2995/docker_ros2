@@ -1,1 +1,7 @@
+vcs import ./src < ./src/.repos
 wget https://raw.githubusercontent.com/ros-controls/control.ros.org/master/ros_controls.$ROS_DISTRO.repos
+rosdep update --rosdistro=$ROS_DISTRO
+sudo apt update
+rosdep install  --from-paths src --ignore-src -r -y
+
+colcon build --symlink-install

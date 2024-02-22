@@ -6,8 +6,12 @@
     "service": "ros2_docker",
     "workspaceFolder": "/ament_ws",
     "shutdownAction": "stopCompose",
-    "extensions": [
-      "ms-vscode.cmake-tools",
-      "ms-vscode.cpptools-extension-pack"
-    ]
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "ms-vscode.cmake-tools",
+          "ms-vscode.cpptools-extension-pack"
+        ]
+      }
+    }
   }
