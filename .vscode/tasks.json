@@ -1,29 +1,29 @@
 // Author: Tobit Flatscher - github.com/2b-t (2022)
+//         Lionel Orcil - 
 {
     // See https://go.microsoft.com/fwlink/?LinkId=733558
     // for the documentation about the tasks.json format
     "version": "2.0.0",
     "tasks": [
-      // Import repositories with vcs tool
+      // Init or Upgrade Gyrosse
       {
-        "label": "vcs",
-        "detail": "Import dependencies with vcs tool.",
+        "label": "Init or Upgrade Gyrosse ",
+        "detail": "install ros_controls and dependencies",
         "type": "shell",
-        "command": "vcs import < .repos",
-        "options": {
-          "cwd": "${workspaceFolder}/src"
-        }
-      },
-      // Install ROS dependencies
-      {
-        "label": "install dependencies",
-        "detail": "Install all dependencies specified in the workspaces package.xml files.",
-        "type": "shell",
-        "command": "sudo apt-get update -y && rosdep update && rosdep install --from-paths src --ignore-src -y",
-        "options": {
+        "command": [
+          "cd ./src &&",
+          "vcs import < .repos &&",
+          "wget https://raw.githubusercontent.com/ros-controls/control.ros.org/master/ros_controls.$ROS_DISTRO.repos &&",
+          "vcs import  < ros_controls.$ROS_DISTRO.repos &&",
+          "cd ../ &&",
+          "sudo apt-get update -y &&",
+          "rosdep update &&",
+          "rosdep install --from-paths src --ignore-src -y"
+          ],  
+          "options": {
           "cwd": "${workspaceFolder}"
         }
-      },
+      },      
       // Build tasks
       {
         "label": "build",
