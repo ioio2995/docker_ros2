@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<robot name="URDF_Gyrosse" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<transmission name="Wheel1_to_base_link_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Wheel1_to_base_link">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Wheel1_to_base_link_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="FlyWheel1_to_base_link_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="FlyWheel1_to_base_link">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="FlyWheel1_to_base_link_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="Wheel2_to_base_link_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Wheel2_to_base_link">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Wheel2_to_base_link_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="FlyWheel2_to_base_link_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="FlyWheel2_to_base_link">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="FlyWheel2_to_base_link_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+</robot>

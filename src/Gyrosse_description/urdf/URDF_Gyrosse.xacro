@@ -1,0 +1,140 @@
+<?xml version="1.0" ?>
+<robot name="URDF_Gyrosse" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find URDF_Gyrosse_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find URDF_Gyrosse_description)/urdf/URDF_Gyrosse.trans" />
+<xacro:include filename="$(find URDF_Gyrosse_description)/urdf/URDF_Gyrosse.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-0.0016092705311097533 -0.015999346379359812 -0.125" rpy="0 0 0"/>
+    <mass value="23.414335421935156"/>
+    <inertia ixx="0.45679" iyy="0.544503" izz="0.235241" ixy="-0.000528" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_Gyrosse_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_Gyrosse_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Wheel1_1">
+  <inertial>
+    <origin xyz="-1.5551590147418134e-13 1.131351956562554e-13 0.04953341837229644" rpy="0 0 0"/>
+    <mass value="29.366879449138207"/>
+    <inertia ixx="0.5615" iyy="0.5615" izz="1.114971" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0 0.03 -0.0655" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_Gyrosse_description)/meshes/Wheel1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.0 0.03 -0.0655" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_Gyrosse_description)/meshes/Wheel1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="FlyWheel1_1">
+  <inertial>
+    <origin xyz="3.052134490437826e-16 2.42861286636753e-17 0.008066340570656312" rpy="0 0 0"/>
+    <mass value="5.05427127683862"/>
+    <inertia ixx="0.027196" iyy="0.027196" izz="0.053586" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0 0.03 0.0425" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_Gyrosse_description)/meshes/FlyWheel1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.0 0.03 0.0425" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_Gyrosse_description)/meshes/FlyWheel1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Wheel2_1">
+  <inertial>
+    <origin xyz="1.6418785088999138e-13 1.131351956562554e-13 -0.04953341837229652" rpy="0 0 0"/>
+    <mass value="29.366879449138207"/>
+    <inertia ixx="0.5615" iyy="0.5615" izz="1.114971" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0 0.03 0.3155" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_Gyrosse_description)/meshes/Wheel2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.0 0.03 0.3155" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_Gyrosse_description)/meshes/Wheel2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="FlyWheel2_1">
+  <inertial>
+    <origin xyz="-5.650296961015648e-17 3.8163916471489756e-17 -0.008066340570656277" rpy="0 0 0"/>
+    <mass value="5.054271276838622"/>
+    <inertia ixx="0.027196" iyy="0.027196" izz="0.053586" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0 0.03 0.2075" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_Gyrosse_description)/meshes/FlyWheel2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.0 0.03 0.2075" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find URDF_Gyrosse_description)/meshes/FlyWheel2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Wheel1_to_base_link" type="continuous">
+  <origin xyz="0.0 -0.03 0.0655" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Wheel1_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+</joint>
+
+<joint name="FlyWheel1_to_base_link" type="continuous">
+  <origin xyz="0.0 -0.03 -0.0425" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="FlyWheel1_1"/>
+  <axis xyz="0.0 0.0 -1.0"/>
+</joint>
+
+<joint name="Wheel2_to_base_link" type="continuous">
+  <origin xyz="0.0 -0.03 -0.3155" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Wheel2_1"/>
+  <axis xyz="0.0 0.0 -1.0"/>
+</joint>
+
+<joint name="FlyWheel2_to_base_link" type="continuous">
+  <origin xyz="0.0 -0.03 -0.2075" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="FlyWheel2_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+</joint>
+
+</robot>
