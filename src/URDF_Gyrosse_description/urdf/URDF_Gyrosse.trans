@@ -1,45 +1,45 @@
 <?xml version="1.0" ?>
 <robot name="URDF_Gyrosse" xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
-<transmission name="Wheel1_to_base_link_tran">
+<transmission name="wheel_right_to_base_link_tran">
   <type>transmission_interface/SimpleTransmission</type>
-  <joint name="Wheel1_to_base_link">
+  <joint name="wheel_right_to_base_link">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
   </joint>
-  <actuator name="Wheel1_to_base_link_actr">
+  <actuator name="wheel_right_to_base_link_actr">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
 </transmission>
 
-<transmission name="FlyWheel1_to_base_link_tran">
+<transmission name="flywheel_right_to_base_link_tran">
   <type>transmission_interface/SimpleTransmission</type>
-  <joint name="FlyWheel1_to_base_link">
+  <joint name="flywheel_right_to_base_link">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
   </joint>
-  <actuator name="FlyWheel1_to_base_link_actr">
+  <actuator name="flywheel_right_to_base_link_actr">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
 </transmission>
 
-<transmission name="Wheel2_to_base_link_tran">
+<transmission name="wheel_left_to_base_link_tran">
   <type>transmission_interface/SimpleTransmission</type>
-  <joint name="Wheel2_to_base_link">
+  <joint name="wheel_left_to_base_link">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
   </joint>
-  <actuator name="Wheel2_to_base_link_actr">
+  <actuator name="wheel_left_to_base_link_actr">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
 </transmission>
 
-<transmission name="FlyWheel2_to_base_link_tran">
+<transmission name="flywheel_left_to_base_link_tran">
   <type>transmission_interface/SimpleTransmission</type>
-  <joint name="FlyWheel2_to_base_link">
+  <joint name="flywheel_left_to_base_link">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
   </joint>
-  <actuator name="FlyWheel2_to_base_link_actr">
+  <actuator name="flywheel_left_to_base_link_actr">
     <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
