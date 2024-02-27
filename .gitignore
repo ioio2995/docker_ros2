@@ -1,5 +1,6 @@
 **/build
 /dump*
+/log
 /old
 .old
 src/*
