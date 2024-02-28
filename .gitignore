@@ -6,4 +6,3 @@
 src/*
 !src/.repos
 !src/.readme.txt
-!src/URDF_Gyrosse_description
