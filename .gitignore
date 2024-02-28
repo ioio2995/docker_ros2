@@ -6,3 +6,6 @@
 src/*
 !src/.repos
 !src/.readme.txt
+.vscode/*
+!.vscode/ros2_source.bash
+!.vscode/tasks.json
