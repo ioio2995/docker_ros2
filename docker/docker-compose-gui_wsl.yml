@@ -4,5 +4,16 @@ services:
     extends:
       file: docker-compose.yml
       service: ros2_docker
+    devices:
+      - /dev/dxg
+      - /dev/dri/card0
+      - /dev/dri/renderD128
     environment:
-     - DISPLAY=:0
+     - WAYLAND_DISPLAY=wayland-0
+     - XDG_RUNTIME_DIR=/run/user/1000/
+     - PULSE_SERVER=unix:/mnt/wslg/PulseServer
+     - LIBVA_DRIVER_NAME=d3d12
+     - LD_LIBRARY_PATH=/usr/lib/wsl/lib
+    volumes:
+      - /mnt/wslg:/mnt/wslg
+      - /usr/lib/wsl:/usr/lib/wsl
